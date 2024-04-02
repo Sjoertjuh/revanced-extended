@@ -7,8 +7,8 @@ env:
   DOWNSTREAM_BRANCH: "main"
 
 on:
-  schedule:
-    - cron: '0 20 * * *'
+  # schedule:
+  #   - cron: '0 20 * * *'
   workflow_dispatch:
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Sync Upstream
         uses: dabreadman/sync-upstream-repo@v1.3.0
-        with: 
+        with:
           upstream_repo: ${{ env.UPSTREAM_URL }}
           upstream_branch: ${{ env.UPSTREAM_BRANCH }}
           downstream_branch: ${{ env.DOWNSTREAM_BRANCH }}
